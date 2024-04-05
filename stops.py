@@ -20,7 +20,7 @@ def extract_stops_files(tree):
     location_stop_codes = {}
     id_stop_codes = {}
     idx=0
-    with open("stops.txt", 'r') as file:
+    with open("Ressources/stops.txt", 'r') as file:
         csv_reader = csv.reader(file, delimiter=',')
         next(csv_reader)
         for row in csv_reader:

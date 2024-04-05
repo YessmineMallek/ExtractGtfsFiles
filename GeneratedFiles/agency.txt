@@ -1,0 +1,4 @@
+agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone
+1,UABS-Banlieue Sahel,http://www.sncft.com.tn,Africa/Tunis,ar,+216 71334444
+2,UABT-Banlieue Tunis,http://www.sncft.com.tn,Africa/Tunis,ar,+216 71334444
+3,UAGL-Grande Ligne,http://www.sncft.com.tn,Africa/Tunis,ar,+216 71334444

@@ -3,7 +3,7 @@ import pandas as pd  # type: ignore
 from sqlalchemy import create_engine # type: ignore
 
 def findShape(shortName):
-    dfTrips2=pd.read_csv("trips2.txt")
+    dfTrips2=pd.read_csv("Ressources/trips2.txt")
     for index, row in dfTrips2.iterrows():
         if(shortName==row['trip_short_name']):
             return(row['shape_id'])

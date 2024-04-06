@@ -8,6 +8,7 @@
 -  In the main file (To run the backEnd code):
 1. pip install fastapi
 2. pip install "uvicorn[standard]"
-3. uvicorn API:app --reload
+3. uvicorn API:app --reload   "OR"   python -m uvicorn API:app --reload
+ 
 
 

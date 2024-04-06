@@ -5,7 +5,7 @@
 2. npm audit fix --force
 3. npm start 
 
--  In the file 'FichierXml'(To run the backEnd code):
+-  In the main file (To run the backEnd code):
 1. pip install fastapi
 2. pip install "uvicorn[standard]"
 3. uvicorn API:app --reload

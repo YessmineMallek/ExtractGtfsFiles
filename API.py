@@ -22,6 +22,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+   
+ 
+@app.post("/files/{name}")
+async def create_files(name:str):
+    print(name)
+    return FileResponse("GeneratedFiles/"+name)
 
 
 @app.post("/uploadfiles/")
@@ -34,11 +40,22 @@ async def create_upload_files(file: UploadFile):
         func.extract_Trips_Routes_CSV(tree)
         stops_tim.extaract_Stops_times(tree)
         stp.extract_stops_files(tree)
-@app.get("/")
-def main():
-    return {"hello world"}        
+        string_array = ["trips.txt", "routes.txt", "shapes.txt", "stops_times.txt","stops.txt","agency.txt"]
+        return string_array
 
+
+@app.get("/")
+async def main():
+    content = """
+<body>
+<form action="/files/trips.txt" enctype="multipart/form-data" method="post">
+<input name="files" type="file" multiple>
+<input type="submit">
+</form>
+
+</body>
+    """
+    return HTMLResponse(content=content)
     
 
-if __name__ == "__main__":
-    app.run(debug=True)
+

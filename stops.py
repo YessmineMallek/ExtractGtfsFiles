@@ -16,13 +16,14 @@ def update_location(location_element):
         return location_element
 
 def extract_stops_files(tree):
-    lat_lon = {}
+    lat_lon = {'lat': 0, 'lon': 0}
     location_stop_codes = {}
     id_stop_codes = {}
     idx=0
     with open("Ressources/stops.txt", 'r') as file:
         csv_reader = csv.reader(file, delimiter=',')
         next(csv_reader)
+        
         for row in csv_reader:
             code = row[1]  
             lat = row[4] 
@@ -71,10 +72,11 @@ def extract_stops_files(tree):
     with open('GeneratedFiles/stops.txt', 'w') as file:
         file.write("stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station\n")
         for idx, (location_name, stop_code) in enumerate(location_stop_codes.items(), start=1):
-            latt = ''
-            lonn = ''
+            latt = 0.0
+            lonn = 0.0
             if stop_code in lat_lon:
                 latt = lat_lon[stop_code]['lat']
                 lonn = lat_lon[stop_code]['lon']
             file.write(f"{idx},{stop_code},{location_name},,{latt},{lonn},,,0,\n")
+    
         

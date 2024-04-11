@@ -11,4 +11,4 @@
 3. uvicorn API:app --reload   "OR"   python -m uvicorn API:app --reload
  
 
-
+![Alt Text]("example.png")
